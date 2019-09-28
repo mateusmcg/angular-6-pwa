@@ -9,6 +9,8 @@ import { TodoComponent } from './todo/todo.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
